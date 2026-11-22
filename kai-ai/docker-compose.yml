@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  kai-ai:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
