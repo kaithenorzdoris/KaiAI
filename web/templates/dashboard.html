@@ -1,1 +1,232 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a12">
+  <meta name="description" content="Mình là KaiAI — một người bạn đồng hành để server Discord có thêm điều để trò chuyện, khám phá và cùng tạo nên.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KaiAI — Mình là Kai. Rất vui được gặp bạn.">
+  <meta property="og:description" content="AI, trò chơi và công cụ cộng đồng — một người bạn đồng hành cho server Discord của bạn.">
+  <title>KaiAI — Mình là Kai. Rất vui được gặp bạn.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Bỏ qua điều hướng, tới nội dung</a>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="KaiAI trang chủ">
+      <span class="brand-mark">K<span>✦</span></span>
+      <span>Kai<span class="brand-accent">AI</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <a href="#features">Tính năng</a>
+      <a href="#commands">Lệnh bot</a>
+      <a href="#community">Cộng đồng</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="button button-ghost" href="#commands">Khám phá lệnh</a>
+      <a class="button button-primary invite-link" href="{{ invite_url }}" target="_blank" rel="noopener noreferrer">Mời KaiAI <span>↗</span></a>
+    </div>
+    <button class="mobile-menu" aria-label="Mở menu" aria-expanded="false">☰</button>
+  </header>
 
+  <main id="main-content">
+    <section class="hero wrap" id="top">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span><span id="hero-status-line">KAI ĐANG KẾT NỐI...</span></div>
+        <h1>Chào, mình là Kai.<br><span class="gradient-text">Cùng server vui hơn.</span></h1>
+        <p class="hero-description">Mình là KaiAI — một người bạn đồng hành để server có thêm điều để <strong>trò chuyện, khám phá và cùng tạo nên.</strong> Khi bạn cần AI, một trò chơi hay vài công cụ quản trị, mình ở đây.</p>
+        <div class="hero-actions">
+          <a class="button button-primary button-large invite-link" href="{{ invite_url }}" target="_blank" rel="noopener noreferrer">Thêm KaiAI vào server <span>↗</span></a>
+          <a class="button button-outline button-large" href="#features">Xem Kai làm được gì <span>↓</span></a>
+        </div>
+        <div class="hero-social">
+          <div class="avatar-stack" aria-hidden="true"><i>K</i><i>✦</i><i>AI</i></div>
+          <span>Một người bạn do {{ owner }} tạo nên</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Mô hình năng lượng AI 3D">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
+        <div class="core-glow"></div>
+        <div class="core-cube"><span>K</span><b>✦</b></div>
+        <div class="float-card float-card-top"><span class="mini-icon violet">✧</span><div><small>MỘT LỜI TỪ KAI</small><strong>“Mình đây. Bắt đầu nhé?”</strong></div><i class="tiny-live"></i></div>
+        <div class="float-card float-card-bottom"><span class="mini-icon cyan">⌘</span><div><small>MẠNG LƯỚI CỦA MÌNH</small><strong id="hero-network-copy">Đang tìm tín hiệu...</strong></div><i class="tiny-live"></i></div>
+        <div class="spark spark-one">✦</div><div class="spark spark-two">✧</div><div class="spark spark-three">·</div>
+      </div>
+      <div class="hero-bottom">
+        <span>TRÍ TUỆ NHÂN TẠO</span><i></i><span>GAME &amp; KINH TẾ</span><i></i><span>QUẢN TRỊ CỘNG ĐỒNG</span>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="KaiAI, trợ lý cộng đồng của bạn">
+      <div class="ticker-track"><span>CÙNG NHAU TẠO KHÔNG KHÍ</span><b>✳</b><span>MỖI SERVER MỘT CÂU CHUYỆN</span><b>✳</b><span>CHƠI HẾT MÌNH, QUẢN TRỊ GỌN GHẼ</span><b>✳</b><span>KAI LUÔN Ở ĐÂY</span><b>✳</b><span>CÙNG NHAU TẠO KHÔNG KHÍ</span><b>✳</b><span>MỖI SERVER MỘT CÂU CHUYỆN</span><b>✳</b><span>CHƠI HẾT MÌNH, QUẢN TRỊ GỌN GHẼ</span><b>✳</b><span>KAI LUÔN Ở ĐÂY</span><b>✳</b></div>
+    </div>
+
+    <section class="network-stats wrap" aria-label="Thông số KaiAI trực tiếp">
+      <article class="stat-card"><span class="stat-icon violet">◈</span><div><span>TRẠNG THÁI BOT</span><strong id="stat-status">Đang kết nối</strong><small><i class="stat-live"></i> Cập nhật trực tiếp</small></div></article>
+      <article class="stat-card"><span class="stat-icon cyan">⌂</span><div><span>DISCORD SERVERS</span><strong id="stat-servers">—</strong><small>Server đang sử dụng KaiAI</small></div></article>
+      <article class="stat-card"><span class="stat-icon pink">♙</span><div><span>THÀNH VIÊN</span><strong id="stat-members">—</strong><small>Tổng thành viên trong mạng lưới</small></div></article>
+      <article class="stat-card"><span class="stat-icon gold">ϟ</span><div><span>ĐỘ TRỄ GATEWAY</span><strong id="stat-latency">—</strong><small id="stat-uptime">Đang đọc trạng thái bot</small></div></article>
+    </section>
+
+    <section class="section wrap" id="features">
+      <div class="section-heading">
+        <div><div class="eyebrow">MỘT BOT, VÔ VÀN KHẢ NĂNG</div><h2>Không chỉ là một chatbot.</h2></div>
+        <p>Mình có nhiều mặt, nhưng cùng một mục tiêu: giúp mọi người thấy thoải mái hơn khi ở đây.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card feature-ai"><div class="feature-icon">✧</div><span class="feature-kicker">01 / LISTEN &amp; IMAGINE</span><h3>Ý tưởng bắt đầu từ một câu hỏi</h3><p>Trò chuyện cùng KaiAI, tiếp nối ngữ cảnh phiên chat và tạo ảnh khi dịch vụ AI đã được cấu hình.</p><span class="card-orb"></span></article>
+        <article class="feature-card feature-game"><div class="feature-icon">◈</div><span class="feature-kicker">02 / PLAY &amp; GROW</span><h3>Mỗi lần ghé, thêm một cuộc vui</h3><p>Điểm danh, làm việc, phát triển tài sản ảo rồi xem mình đang đứng ở đâu trên bảng xếp hạng.</p><span class="card-chart">↗</span></article>
+        <article class="feature-card feature-mod"><div class="feature-icon">⌘</div><span class="feature-kicker">03 / KEEP THINGS KIND</span><h3>Trật tự, không mất không khí</h3><p>Công cụ kiểm duyệt, AutoMod, log và tiện ích giúp quản trị viên chăm sóc server dễ dàng hơn.</p><div class="mod-lines"><i></i><i></i><i></i></div></article>
+        <article class="feature-card feature-social"><div class="feature-icon">♡</div><span class="feature-kicker">04 / MAKE IT A COMMUNITY</span><h3>Đừng để cuộc trò chuyện nguội đi</h3><p>Poll, giveaway, ticket, nhắc việc và các hoạt động để ai cũng có cơ hội góp tiếng nói.</p><div class="social-bubbles"><i>✦</i><i>♡</i><i>✧</i></div></article>
+      </div>
+    </section>
+
+    <section class="section commands-section" id="commands">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><div class="eyebrow">COMMAND CENTER</div><h2>Mọi lệnh. Một nơi.</h2></div>
+          <p>Danh sách được lấy trực tiếp từ bot đang chạy. Tìm lệnh bạn cần và khám phá thêm.</p>
+        </div>
+        <div class="command-panel">
+          <div class="command-toolbar">
+            <label class="search-box"><span>⌕</span><input id="command-search" type="search" placeholder="Tìm tên lệnh hoặc tính năng..." autocomplete="off"><kbd>⌘ K</kbd></label>
+            <span class="command-total"><b id="command-count">—</b> lệnh</span>
+          </div>
+          <div class="command-tags" id="command-categories"><button class="tag active" data-category="all">Tất cả</button></div>
+          <div class="command-list" id="command-list"><div class="loading-row"><span class="spinner"></span> Đang kết nối với KaiAI...</div></div>
+          <div class="command-footer"><span id="command-note">Dữ liệu được cập nhật khi bot khởi động.</span><a href="https://discord.com" target="_blank" rel="noopener noreferrer">Xem bot trên Discord ↗</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="community">
+      <div class="section-heading">
+        <div><div class="eyebrow">KAIAI NETWORK</div><h2>Đang ở đâu?</h2></div>
+        <p>KaiAI đang đồng hành cùng các cộng đồng Discord trên khắp nơi.</p>
+      </div>
+      <div class="community-grid">
+        <article class="glass-panel server-panel">
+          <div class="panel-title"><div><span class="live-label"><i></i> LIVE NETWORK</span><h3>Server của KaiAI</h3><span class="server-subtitle">Danh sách server bot đang tham gia</span></div><span class="big-number" id="server-count">—</span></div>
+          <label class="server-search"><span>⌕</span><input id="server-search" type="search" placeholder="Tìm theo tên server..." autocomplete="off"><span id="server-result-count"></span></label>
+          <div class="server-list" id="server-list"><div class="loading-row"><span class="spinner"></span> Đang tải server...</div></div>
+          <div class="server-pagination"><span id="server-page-label">Trang —</span><div><button id="server-prev" type="button" aria-label="Trang server trước" disabled>←</button><button id="server-next" type="button" aria-label="Trang server tiếp" disabled>→</button></div></div>
+        </article>
+        <article class="glass-panel leaderboard-panel">
+          <div class="panel-title"><div><span class="live-label"><i></i> COMMUNITY RANKING</span><h3>Bảng xếp hạng</h3></div><span class="leaderboard-crown">♛</span></div>
+          <div class="leaderboard-list" id="leaderboard-list"><div class="loading-row"><span class="spinner"></span> Đang tải bảng xếp hạng...</div></div>
+          <p class="panel-footnote">Xếp theo tổng tiền trong ví và ngân hàng.</p>
+        </article>
+        <article class="glass-panel game-leaderboard-panel">
+          <div class="panel-title"><div><span class="live-label"><i></i> GAME ARENA</span><h3>Những tay chơi nổi bật</h3></div><span class="leaderboard-crown">🎮</span></div>
+          <div class="leaderboard-list" id="game-leaderboard-list"><div class="loading-row"><span class="spinner"></span> Đang tải thành tích game...</div></div>
+          <p class="panel-footnote">Xếp theo lợi nhuận tích lũy từ các trò chơi trong bot. Chơi công bằng, không có giá trị tiền thật.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap guide-section" id="guide">
+      <div class="section-heading">
+        <div><div class="eyebrow">MỘT CHÚT VỀ MÌNH</div><h2>Không cần ồn ào. Chỉ cần đúng lúc.</h2></div>
+        <p>Mình được tạo ra để làm những việc nhỏ giúp server dễ chịu hơn — và ở đó khi mọi người cần thêm một chút cảm hứng.</p>
+      </div>
+      <div class="guide-grid">
+        <article class="guide-story">
+          <div class="guide-orb"><span>K</span><i>✦</i></div>
+          <span class="feature-kicker">MÌNH LÀ KAI · ĐƯỢC TẠO BỞI {{ owner|upper }}</span>
+          <h3>Mình là Kai.<br><span class="gradient-text">Rất vui được vào server.</span></h3>
+          <p>Mình không muốn chỉ là một danh sách lệnh. Mình muốn giúp cuộc trò chuyện tiếp tục, mang đến điều để cùng chơi, và làm những việc hậu trường gọn gàng hơn. Bạn quyết định Kai sẽ trở thành một phần như thế nào trong cộng đồng của mình.</p>
+          <div class="guide-chips"><span>AI chat</span><span>Games</span><span>Moderation</span><span>Community</span></div>
+        </article>
+        <article class="glass-panel guide-facts">
+          <span class="live-label"><i></i> BẮT ĐẦU TRONG VÀI GIÂY</span>
+          <h3>Kết nối KaiAI với server</h3>
+          <ol>
+            <li><span>01</span><div><strong>Mời bot</strong><p>Dùng link mời chính thức rồi chọn server bạn quản lý.</p></div></li>
+            <li><span>02</span><div><strong>Khám phá lệnh</strong><p>Tìm lệnh ngay trên trang hoặc dùng <code>!help</code> trong Discord.</p></div></li>
+            <li><span>03</span><div><strong>Cùng xây cộng đồng</strong><p>Thử AI, trò chơi, tiện ích và các công cụ quản trị.</p></div></li>
+          </ol>
+          <a class="guide-link invite-link" href="{{ invite_url }}" target="_blank" rel="noopener noreferrer">Mời mình vào server <span>↗</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="invite-section wrap" id="invite">
+      <div class="invite-card">
+        <div class="invite-sheen"></div><div class="invite-content">
+          <div class="eyebrow">SẴN SÀNG NÂNG CẤP SERVER?</div>
+          <h2>Đưa một chút <span class="gradient-text">ma thuật</span> vào Discord.</h2>
+          <p>Mình sẽ chờ ở đó — sẵn sàng để bạn khám phá từng tính năng theo cách riêng của server.</p>
+          <a class="button button-primary button-large invite-link" href="{{ invite_url }}" target="_blank" rel="noopener noreferrer">Mời KaiAI miễn phí <span>↗</span></a>
+          <p class="invite-permission-note">Quyền tối thiểu: xem/gửi tin, dùng thread, đọc lịch sử, embed, gửi file và reaction. Không yêu cầu Administrator; một số lệnh quản trị hoặc voice cần cấp thêm quyền riêng.</p>
+        </div><div class="invite-orbit"><div class="invite-symbol">K<span>✦</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <a class="brand" href="#top"><span class="brand-mark">K<span>✦</span></span><span>Kai<span class="brand-accent">AI</span></span></a>
+    <span>Được tạo với ✦ bởi <strong>{{ owner }}</strong></span>
+    <span class="footer-status"><i></i> KaiAI <span id="bot-status">đang kết nối</span></span>
+  </footer>
+  <section class="community-chat" id="community-chat" aria-label="Chat cộng đồng">
+    <div class="chat-panel" id="chat-panel" aria-labelledby="chat-title" hidden>
+      <header class="chat-header" id="chat-drag-handle">
+        <div class="chat-brand-icon">✦</div>
+        <div class="chat-heading"><strong id="chat-title">KaiAI Community</strong><span><i></i> Phòng chat chung</span></div>
+        <button class="chat-header-button" id="chat-minimize" aria-label="Thu nhỏ chat">−</button>
+        <button class="chat-header-button" id="chat-close" aria-label="Đóng chat">×</button>
+      </header>
+      <div class="chat-notice">Hãy tôn trọng mọi người. Chat công khai, không cần tài khoản; tin nhắn được lưu trong phòng chat chung.</div>
+      <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+      <div class="chat-compose">
+        <div class="chat-signin-note" id="chat-signin-note">Chọn biệt danh để bắt đầu trò chuyện.</div>
+        <label class="visually-hidden" for="chat-name">Biệt danh trong chat</label>
+        <input class="chat-name-input" id="chat-name" type="text" maxlength="24" minlength="2" placeholder="Biệt danh (2–24 ký tự)" autocomplete="nickname">
+        <form id="chat-form">
+          <label class="visually-hidden" for="chat-input">Tin nhắn cộng đồng</label>
+          <textarea id="chat-input" maxlength="500" rows="1" placeholder="Viết tin nhắn..."></textarea>
+          <button id="chat-send" type="submit" aria-label="Gửi tin nhắn">↑</button>
+        </form>
+        <div class="chat-compose-footer"><span>Biệt danh 2–24 · tin nhắn tối đa 500 ký tự</span><span>5 tin / 15 giây</span></div>
+      </div>
+      <button class="chat-resize-handle" id="chat-resize-handle" aria-label="Kéo để thay đổi kích thước cửa sổ chat"></button>
+    </div>
+    <button class="chat-launcher" id="chat-launcher" aria-label="Mở chat cộng đồng" aria-expanded="false">
+      <span class="chat-launcher-icon">✦</span><span class="chat-launcher-label">Chat cộng đồng</span><span class="chat-unread" id="chat-unread" hidden>0</span>
+    </button>
+  </section>
+  <section class="site-assistant" aria-label="Trợ lý hướng dẫn KaiAI">
+    <div class="assistant-panel" id="assistant-panel" hidden>
+      <header class="assistant-header">
+        <div class="assistant-avatar">K<span>✦</span></div>
+        <div><strong>KaiAI Guide</strong><span><i></i><span id="assistant-mode">Hướng dẫn nhanh</span></span></div>
+        <button id="assistant-close" type="button" aria-label="Đóng trợ lý">×</button>
+      </header>
+      <div class="assistant-transcript" id="assistant-transcript" role="log" aria-live="polite">
+        <div class="assistant-message assistant-bot">Chào bạn! Mình có thể giới thiệu KaiAI, chỉ bạn cách mời bot, tìm lệnh, xem thành tích game và tham gia chat cộng đồng không cần đăng nhập. Bạn muốn khám phá điều gì?</div>
+      </div>
+      <div class="assistant-prompts" id="assistant-prompts">
+        <button type="button" data-question="KaiAI có tính năng gì?">KaiAI làm được gì?</button>
+        <button type="button" data-question="Làm sao mời bot?">Cách mời bot</button>
+        <button type="button" data-question="Chỉ cho mình xem server">Xem danh sách server</button>
+      </div>
+      <form class="assistant-form" id="assistant-form">
+        <label class="visually-hidden" for="assistant-input">Hỏi KaiAI Guide</label>
+        <input id="assistant-input" type="text" maxlength="240" placeholder="Hỏi về KaiAI hoặc website..." autocomplete="off">
+        <button type="submit" aria-label="Gửi câu hỏi">↑</button>
+      </form>
+      <p class="assistant-disclaimer">Khi AI được bật, chỉ câu hỏi hiện tại được gửi tới OpenAI để tạo câu trả lời; không gửi lịch sử chat.</p>
+    </div>
+    <button class="assistant-launcher" id="assistant-launcher" type="button" aria-expanded="false">
+      <span>✧</span><span>Hỏi KaiAI</span>
+    </button>
+  </section>
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</body>
+</html>
