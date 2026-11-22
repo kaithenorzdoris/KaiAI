@@ -1,0 +1,21 @@
+# ==========================================================================
+#  KaiAI — Thư viện runtime
+#  Cài đặt:  pip install -r requirements.txt
+# ==========================================================================
+
+# --- Lõi Discord ---
+discord.py>=2.4.0,<3.0.0
+aiohttp>=3.9.0
+
+# --- Lưu trữ & tiện ích ---
+aiosqlite>=0.20.0
+python-dotenv>=1.0.0
+psutil>=5.9.0
+pytz>=2024.1
+
+# --- Health server (Render / Railway / Replit) ---
+Flask>=3.0.0,<4.0.0
+waitress>=3.0.0
+
+# --- AI (OpenAI) ---
+openai>=1.40.0

@@ -1,0 +1,58 @@
+{
+  "name": "KaiAI",
+  "version": "6.2.0",
+  "codename": "Ultimate",
+  "built_at": "2026-10-15",
+  "python": ">=3.10",
+  "entrypoint": "main.py",
+  "package_layout": {
+    "kai_core": [
+      "config.py",
+      "logging_setup.py",
+      "utils.py",
+      "database.py",
+      "ui.py",
+      "errors.py",
+      "pagination.py",
+      "parity.py",
+      "version.py",
+      "ratelimit.py",
+      "idempotency.py",
+      "migrations.py",
+      "logstore.py",
+      "economy.py",
+      "security.py"
+    ],
+    "cogs": [
+      "admin.py",
+      "ai_chat.py",
+      "database.py",
+      "diagnostics.py",
+      "games.py",
+      "kai_premium.py",
+      "logs.py",
+      "logs_center.py",
+      "love.py",
+      "system.py",
+      "utility_pro.py"
+    ]
+  },
+  "highlights": [
+    "Discord game leaderboard !topgame / !gameboard aggregates virtual-currency performance.",
+    "Public website without OAuth login; visitor-nickname chat protected by CSRF and anti-spam limits.",
+    "Live game leaderboard integrated into the public KaiAI dashboard.",
+    "Unknown prefix commands now explain how to open !help instead of being ignored.",
+    "Shared kai_core package (config/logging/utils/database/ui).",
+    "Rewritten main.py: structured logging, cog discovery, graceful shutdown, presence rotation.",
+    "keep_alive.py health server with /healthz and /ready endpoints.",
+    "New System cog with global !help, !sysinfo, !invite and owner maintenance commands.",
+    "Centralised error handling for prefix and slash commands.",
+    "Fixed broken spy-log jump button in cogs/logs.py.",
+    "Removed duplicated infrastructure files from cogs/."
+  ],
+  "validation": {
+    "python_ast": "passed",
+    "cog_contract": "11/11 cogs expose setup(bot)",
+    "command_conflicts": "none"
+  }
+}
